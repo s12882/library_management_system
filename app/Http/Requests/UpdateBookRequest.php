@@ -59,4 +59,16 @@ class UpdateBookRequest extends FormRequest
             'isbn.regex' => 'Field must be a valid ISBN'
         ];
     }
+
+    /**
+     * @return array<string, string>
+     */
+    public function attributes(): array
+    {
+        return [
+            'author_id' => 'author',
+            'isbn' => 'ISBN',
+            'total_copies' => 'number of copies',
+        ];
+    }
 }
