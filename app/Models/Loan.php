@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -42,12 +43,14 @@ class Loan extends Model
         return $this->due_at->isPast() ? 'overdue' : 'active';
     }
 
-    public function overdue(Builder $query): void
+    #[Scope]
+    protected function overdue(Builder $query): void
     {
         $query->whereDate('due_at', '<', now());
     }
 
-    public function active(Builder $query): void
+    #[Scope]
+    protected function active(Builder $query): void
     {
         $query->whereDate('due_at', '>=', now());
     }
