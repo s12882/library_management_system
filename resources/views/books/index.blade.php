@@ -36,7 +36,9 @@
                         <td class="px-4 py-3">
                             <div class="flex justify-end gap-3">
                                 <a href="{{ route('books.edit', $book) }}" class="font-medium text-gray-700 hover:text-gray-900">Edit</a>
-                                <form method="POST" action="{{ route('books.destroy', $book) }}" data-confirm="Delete &quot;{{ $book->title }}&quot;?">
+                                <form method="POST" action="{{ route('books.destroy', $book) }}"
+                                      data-confirm="Delete &quot;{{ $book->title }}&quot;?">
+                                    @csrf
                                     @method('DELETE')
                                     <button type="submit" class="font-medium text-red-600 hover:text-red-800">Delete</button>
                                 </form>

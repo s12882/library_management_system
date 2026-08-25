@@ -1,3 +1,7 @@
+@php
+    $book = $book ?? null;
+@endphp
+
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
     <div class="sm:col-span-2">
         <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
