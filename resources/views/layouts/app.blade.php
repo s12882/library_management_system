@@ -16,6 +16,12 @@
                    class="rounded-md px-3 py-2 {{ request()->routeIs('books.*') ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100' }}">
                     Books
                 </a>
+                @if (Route::has('authors.index'))
+                    <a href="{{ route('authors.index') }}"
+                       class="rounded-md px-3 py-2 {{ request()->routeIs('authors.*') ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100' }}">
+                        Authors
+                    </a>
+                @endif
             </div>
         </div>
     </nav>

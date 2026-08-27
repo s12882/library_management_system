@@ -41,5 +41,12 @@ $(function () {
 
         hideModal()
     })
+
+    $(document).on('click', '[data-author-toggle]', function () {
+        const id = $(this).data('author-toggle')
+
+        $('#author-books-' + id).toggleClass('hidden')
+        $('[data-chevron="' + id + '"]').toggleClass('rotate-90')
+    })
 });
 
